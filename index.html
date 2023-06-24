@@ -58,15 +58,16 @@
 </div>
 <script>
     let tg = window.Telegram.WebApp;
-   // const detailsButton = document.getElementById('details-button');
+     const detailsButton = document.getElementById('details-button');
     tg.expand();
     tg.MainButton.show();
 
-    console.log(tg);
-    //
-    // detailsButton.addEventListener('click', ()=>{
-    //     tg.MainButton.showProgres();
-    // })
+    console.log(detailsButton);
+
+    detailsButton.addEventListener('click', ()=>{
+        tg.MainButton.showProgres();
+    })
+
 </script>
 </body>
 </html>
