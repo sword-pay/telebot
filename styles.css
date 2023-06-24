@@ -79,3 +79,7 @@ html, body {
     color: #6B6E75;
     font-weight: 400;
 }
+
+.hidden {
+    display: none;
+}

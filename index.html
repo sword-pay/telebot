@@ -14,70 +14,94 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="container">
-    <h1>
-        My Money Account
-    </h1>
-    <div class="balance">
-        € 250
+<div class="pages">
+    <div class="page" id="home-page">
+        <div class="container">
+            <h1>
+                My Money Account
+            </h1>
+            <div class="balance">
+                € 250
+            </div>
+            <div class="action-buttons">
+                <button type="button">Add Card</button>
+                <button type="button" id="details-button">Details</button>
+            </div>
+            <div class="divider"></div>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-icon">
+                        <img src="./card.png">
+                    </div>
+                    <div class="card-info">
+                        <div class="card-name">Visa Debit</div>
+                        <div class="card-details">*6645 | Exp. 12/2015</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <img src="./card.png">
+                    </div>
+                    <div class="card-info">
+                        <div class="card-name">Expanses</div>
+                        <div class="card-details">*2445 | Exp. 12/2015</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <img src="./card.png">
+                    </div>
+                    <div class="card-info">
+                        <div class="card-name gold">Sword Business Card | Gold</div>
+                        <div class="card-details">*3455 | Exp. 12/2015</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="action-buttons">
-        <button type="button">Add Card</button>
-        <button type="button" id="details-button">Details</button>
-    </div>
-    <div class="divider"></div>
-    <div class="cards">
-        <div class="card">
-            <div class="card-icon">
-                <img src="./card.png">
-            </div>
-            <div class="card-info">
-                <div class="card-name">Visa Debit</div>
-                <div class="card-details">*6645 | Exp. 12/2015</div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-icon">
-                <img src="./card.png">
-            </div>
-            <div class="card-info">
-                <div class="card-name">Expanses</div>
-                <div class="card-details">*2445 | Exp. 12/2015</div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-icon">
-                <img src="./card.png">
-            </div>
-            <div class="card-info">
-                <div class="card-name gold">Sword Business Card | Gold</div>
-                <div class="card-details">*3455 | Exp. 12/2015</div>
-            </div>
-        </div>
+    <div class="page hidden" id="bank-info-page">
+        Bank info details
     </div>
 </div>
 <script>
     let tg = window.Telegram.WebApp;
-     const detailsButton = document.getElementById('details-button');
+
+    const homePage = document.getElementById('home');
+    const bankInfoPage = document.getElementById('bank-info-page');
+    const detailsButton = document.getElementById('details-button');
+
     tg.expand();
-    tg.MainButton.text = "Send or Request";
-    tg.MainButton.color = "#ffd140";
-    tg.MainButton.textColor = "#27328f";
-    tg.MainButton.show();
 
-    detailsButton.addEventListener('click', ()=>{
-        tg.MainButton.showProgress();
-    })
-
-
-    tg.onEvent('mainButtonClicked', ()=>{
-        tg.showPopup({
-            title: 'Hello world',
-            message: 'Hello world',
-        }, ()=>{})
+    detailsButton.addEventListener('click', () => {
+        homePage.classList.add('hidden');
+        bankInfoPage.classList.remove('hidden');
 
         tg.BackButton.show();
+    });
+
+    tg.onEvent('backButtonClicked', () => {
+        bankInfoPage.classList.add('hidden');
+        homePage.classList.remove('hidden');
+
+        tg.BackButton.hide();
     })
+
+
+    // tg.MainButton.text = "Send or Request";
+    // tg.MainButton.color = "#ffd140";
+    // tg.MainButton.textColor = "#27328f";
+
+    //tg.MainButton.show();
+
+    // tg.onEvent('mainButtonClicked', () => {
+    //     tg.showPopup({
+    //         title: 'Hello world',
+    //         message: 'Hello world',
+    //     }, () => {
+    //     })
+    //
+    //     tg.BackButton.show();
+    // })
 </script>
 </body>
 </html>
