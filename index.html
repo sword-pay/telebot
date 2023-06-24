@@ -23,7 +23,7 @@
     </div>
     <div class="action-buttons">
         <button type="button">Add Card</button>
-        <button type="button">Details</button>
+        <button type="button" id="details-button">Details</button>
     </div>
     <div class="divider"></div>
     <div class="cards">
@@ -58,6 +58,7 @@
 </div>
 <script>
     let tg = window.Telegram.WebApp;
+    const detailsButton = document.getElementById('details-button');
     tg.expand();
 
     tg.headerColor = "#008CFF"
@@ -65,8 +66,11 @@
     tg.MainButton.show();
 
     console.log(tg);
-    tg.showConfirm('Are you sure', ()=>{
 
+    detailsButton.addEventListener('onClick', ()=>{
+        tg.showConfirm('Are you sure', ()=>{
+
+        })
     })
 </script>
 </body>
