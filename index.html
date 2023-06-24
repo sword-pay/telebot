@@ -66,6 +66,12 @@
 <script>
     let tg = window.Telegram.WebApp;
 
+    function setThemeClass() {
+        document.documentElement.className = Telegram.WebApp.colorScheme;
+    }
+    setThemeClass();
+    tg.onEvent('themeChanged', setThemeClass);
+
     const homePage = document.getElementById('home-page');
     const bankInfoPage = document.getElementById('bank-info-page');
     const detailsButton = document.getElementById('details-button');
