@@ -69,11 +69,14 @@
         tg.MainButton.showProgress();
     })
 
+
     tg.onEvent('mainButtonClicked', ()=>{
         tg.showPopup({
             title: 'Hello world',
             message: 'Hello world',
         }, ()=>{})
+
+        tg.BackButton.show();
     })
 </script>
 </body>

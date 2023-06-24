@@ -1,0 +1,12 @@
+{
+  "name": "sword-telebot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/sword-pay/telebot.git",
+  "author": "Remcare <78211619+Remcare@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.61.0",
+    "telegraf": "^4.12.2"
+  }
+}
