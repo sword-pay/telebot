@@ -70,7 +70,9 @@
     })
 
     tg.onEvent('mainButtonClicked', ()=>{
-        tg.showAlert('Hello', ()=>{})
+        tg.showPopup({
+            title: 'Hello world'
+        }, ()=>{})
     })
 </script>
 </body>
