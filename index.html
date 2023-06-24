@@ -6,13 +6,54 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sword Telebot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,500;0,700;1,200&display=swap"
+          rel="stylesheet">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="container">
+    <h1>
+        My Money Account
+    </h1>
     <div class="balance">
         € 250
+    </div>
+    <div class="action-buttons">
+        <button type="button">Add Card</button>
+        <button type="button">Details</button>
+    </div>
+    <div class="divider"></div>
+    <div class="cards">
+        <div class="card">
+            <div class="card-icon">
+                <img src="./card.png">
+            </div>
+            <div class="card-info">
+                <div class="card-name">Visa Debit</div>
+                <div class="card-details">*6645 | Exp. 12/2015</div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-icon">
+                <img src="./card.png">
+            </div>
+            <div class="card-info">
+                <div class="card-name">Expanses</div>
+                <div class="card-details">*2445 | Exp. 12/2015</div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-icon">
+                <img src="./card.png">
+            </div>
+            <div class="card-info">
+                <div class="card-name gold">Sword Business Card | Gold</div>
+                <div class="card-details">*3455 | Exp. 12/2015</div>
+            </div>
+        </div>
     </div>
 </div>
 </body>

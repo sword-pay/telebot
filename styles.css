@@ -1,4 +1,81 @@
-.balance{
+html, body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container h1 {
+    color: #6B6E75;
+    font-size: 20px;
+}
+
+.balance {
     font-size: 48px;
     font-weight: 500;
+}
+
+.action-buttons {
+    padding-bottom: 32px;
+    display: flex;
+    gap: 12px;
+}
+
+.action-buttons button {
+    height: 52px;
+    flex-grow: 1;
+    font-size: 18px;
+    font-weight: 700;
+    color: #008CFF;
+    background: #F6F8FC;
+    border: none;
+    border-radius: 10px;
+}
+
+.divider {
+    background: #F6F8FC;
+    height: 18px;
+}
+
+.cards {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.card {
+    padding: 16px 12px;
+    display: flex;
+    border-top: 2px solid #F6F8FC;
+    border-bottom: 2px solid #F6F8FC;
+}
+
+.card-icon {
+    background: #455154;
+    border-radius: 9999px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-icon img {
+    width: 34px;
+    object-fit: cover;
+}
+
+.card-info {
+    padding-left: 20px;
+}
+
+.card-name {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.gold {
+    color: goldenrod
+}
+
+.card-details {
+    font-size: 14px;
+    color: #6B6E75;
+    font-weight: 400;
 }
