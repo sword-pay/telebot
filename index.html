@@ -65,14 +65,12 @@
     tg.MainButton.textColor = "#27328f";
     tg.MainButton.show();
 
-    console.log(detailsButton);
-
     detailsButton.addEventListener('click', ()=>{
         tg.MainButton.showProgress();
     })
 
     tg.onEvent('mainButtonClicked', ()=>{
-        alert('mainButtonClicked')
+        tg.showAlert('Hello', ()=>{})
     })
 </script>
 </body>
