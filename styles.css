@@ -1,13 +1,15 @@
 html, body {
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
     font-family: 'Poppins', sans-serif;
 }
 
 .container h1 {
     color: #6B6E75;
     font-size: 20px;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .balance {
