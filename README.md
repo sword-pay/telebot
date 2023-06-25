@@ -1,4 +1,4 @@
-# Material UI - Create React App example
+# Create React App example
 
 ## How to use
 
