@@ -16,7 +16,6 @@
     "@emotion/styled": "latest",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "latest",
-    "gh-pages": "^5.0.0",
     "react": "latest",
     "react-dom": "latest",
     "react-scripts": "latest"
@@ -32,5 +31,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }
