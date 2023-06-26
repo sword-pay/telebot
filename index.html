@@ -1,1 +1,113 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="shortcut icon" href="/favicon.ico"/><meta name="viewport" content="initial-scale=1,width=device-width"/><meta name="theme-color" content="#000000"/><link rel="manifest" href="/manifest.json"/><title>Sword Teleapp</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,500;0,700;1,200&display=swap" rel="stylesheet"><script src="https://telegram.org/js/telegram-web-app.js"></script><script defer="defer" src="/static/js/main.335ebfe0.js"></script></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sword Telebot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,500;0,700;1,200&display=swap"
+          rel="stylesheet">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="pages">
+    <div class="page" id="home-page">
+        <div class="container">
+            <h1>
+                My Money Account
+            </h1>
+            <div class="balance">
+                € 250
+            </div>
+            <div class="action-buttons">
+                <button type="button">Add Card</button>
+                <button type="button" id="details-button">Details</button>
+            </div>
+            <div class="divider"></div>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-icon">
+                        <img src="./card.png">
+                    </div>
+                    <div class="card-info">
+                        <div class="card-name">Visa Debit</div>
+                        <div class="card-details">*6645 | Exp. 12/2015</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <img src="./card.png">
+                    </div>
+                    <div class="card-info">
+                        <div class="card-name">Expanses</div>
+                        <div class="card-details">*2445 | Exp. 12/2015</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <img src="./card.png">
+                    </div>
+                    <div class="card-info">
+                        <div class="card-name gold">Sword Business Card | Gold</div>
+                        <div class="card-details">*3455 | Exp. 12/2015</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page hidden" id="bank-info-page">
+        Bank info details
+    </div>
+</div>
+<script>
+    let tg = window.Telegram.WebApp;
+
+    function setThemeClass() {
+        document.documentElement.className = Telegram.WebApp.colorScheme;
+    }
+    setThemeClass();
+    tg.onEvent('themeChanged', setThemeClass);
+
+    const homePage = document.getElementById('home-page');
+    const bankInfoPage = document.getElementById('bank-info-page');
+    const detailsButton = document.getElementById('details-button');
+
+    tg.expand();
+
+    detailsButton.addEventListener('click', () => {
+        homePage.classList.add('hidden');
+        bankInfoPage.classList.remove('hidden');
+
+        tg.BackButton.show();
+    });
+
+    tg.onEvent('backButtonClicked', () => {
+        bankInfoPage.classList.add('hidden');
+        homePage.classList.remove('hidden');
+
+        tg.BackButton.hide();
+    })
+
+
+    // tg.MainButton.text = "Send or Request";
+    // tg.MainButton.color = "#ffd140";
+    // tg.MainButton.textColor = "#27328f";
+
+    //tg.MainButton.show();
+
+    // tg.onEvent('mainButtonClicked', () => {
+    //     tg.showPopup({
+    //         title: 'Hello world',
+    //         message: 'Hello world',
+    //     }, () => {
+    //     })
+    //
+    //     tg.BackButton.show();
+    // })
+</script>
+</body>
+</html>
